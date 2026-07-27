@@ -5,35 +5,35 @@ dialog:not([open]) {
 }
 
 :root {
-  --ink: #1d1f24;
-  --muted: #677083;
-  --line: #dfe4ec;
-  --paper: #fffefa;
-  --soft: #f5f7fa;
-  --green: #13715f;
-  --green-strong: #0f594c;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --paper: #fafbfe;
+  --soft: #f1f5f9;
+  --green: #0b6656;
+  --green-strong: #084c40;
   --mint: #dff3ec;
-  --blue: #315f9b;
-  --blue-soft: #dce8f8;
-  --coral: #c65b47;
-  --coral-soft: #f9dfd7;
-  --amber: #b87925;
-  --amber-soft: #faedcf;
-  --violet: #6b5ca5;
-  --violet-soft: #ebe7fa;
-  --shadow: 0 20px 50px rgba(29, 31, 36, 0.1);
+  --blue: #2563eb;
+  --blue-soft: #dbeafe;
+  --coral: #dc2626;
+  --coral-soft: #fee2e2;
+  --amber: #d97706;
+  --amber-soft: #fef3c7;
+  --violet: #7c3aed;
+  --violet-soft: #ede9fe;
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
   --radius: 12px;
-  --paper-rgb: 255, 254, 250;
+  --paper-rgb: 250, 251, 254;
   color-scheme: light;
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', Inter, ui-sans-serif, system-ui, sans-serif;
 }
 
 [data-theme="dark"] {
   --ink: #f8fafc;
   --muted: #94a3b8;
-  --line: #334155;
-  --paper: #0f172a;
-  --soft: #1e293b;
+  --line: #1e293b;
+  --paper: #080d1a;
+  --soft: #0f172a;
   --green: #2dd4bf;
   --green-strong: #14b8a6;
   --mint: #134e4a;
@@ -45,14 +45,15 @@ dialog:not([open]) {
   --amber-soft: #78350f;
   --violet: #a78bfa;
   --violet-soft: #4c1d95;
-  --shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-  --paper-rgb: 15, 23, 42;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  --paper-rgb: 8, 13, 26;
   color-scheme: dark;
   --editorial-lime: #3d6b5a;
 }
 
 h1, h2, h3, h4, h5, h6, .brand {
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Outfit', Inter, ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.015em;
 }
 
 * {
@@ -67,8 +68,9 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--paper);
+  background: radial-gradient(circle at top left, var(--soft) 0%, var(--paper) 100%);
   color: var(--ink);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.menu-open {

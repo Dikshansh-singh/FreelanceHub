@@ -440,7 +440,7 @@ Creates demo data with:
 - **18 freelancers** with services across all 7 categories
 - **4 client accounts** with wallet credits (₹15k–₹80k)
 - **25+ orders** in various statuses
-- **2 named accounts:** Dikshansh Singh (freelancer), Tony Stark (client) — both with orders, messages, wallet history
+- **2 named accounts:** Ashish Shankar (freelancer), Tony Stark (client) — both with orders, messages, wallet history
 - All use password: `FreelanceHub123!`
 - 6 months of financial history with realistic transactions
 

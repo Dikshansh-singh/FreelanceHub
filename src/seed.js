@@ -491,10 +491,10 @@ async function main() {
     });
   }
 
-  // 1. Seed Dikshansh Singh (Freelancer)
-  const dikshansh = await User.create({
-    name: "Dikshansh Singh",
-    email: "dikshansh@freelancehub.local",
+  // 1. Seed Ashish Shankar (Freelancer)
+  const ashish = await User.create({
+    name: "Ashish Shankar",
+    email: "ashish@freelancehub.local",
     passwordHash,
     roles: ["freelancer", "client"],
     activeRole: "freelancer",
@@ -515,7 +515,7 @@ async function main() {
     }
   });
 
-  const dikshanshServices = [
+  const ashishServices = [
     {
       title: "I will build a high-performance REST API with Node.js & Express",
       category: "tech",
@@ -529,7 +529,7 @@ async function main() {
       ratingAverage: 5.0,
       ratingCount: 15,
       status: "active",
-      seller: dikshansh._id
+      seller: ashish._id
     },
     {
       title: "I will deploy your Web App on AWS or Vercel with CI/CD",
@@ -544,7 +544,7 @@ async function main() {
       ratingAverage: 4.9,
       ratingCount: 8,
       status: "active",
-      seller: dikshansh._id
+      seller: ashish._id
     },
     {
       title: "I will design and optimize your MongoDB Database Schema",
@@ -559,14 +559,14 @@ async function main() {
       ratingAverage: 4.8,
       ratingCount: 12,
       status: "active",
-      seller: dikshansh._id
+      seller: ashish._id
     }
   ];
 
-  const seededDikshanshServices = [];
-  for (const service of dikshanshServices) {
+  const seededAshishServices = [];
+  for (const service of ashishServices) {
     const s = await Service.create(service);
-    seededDikshanshServices.push(s);
+    seededAshishServices.push(s);
     serviceDocs.push(s);
   }
 
@@ -611,12 +611,12 @@ async function main() {
     createdAt: dateOffsetMonths(5, 5),
     completedAt: dateOffsetMonths(5, 5),
   });
-  // Tony buys REST API (12000) from Dikshansh
+  // Tony buys REST API (12000) from Ashish
   const order1 = await Order.create({
     client: tony._id,
-    freelancer: dikshansh._id,
-    service: seededDikshanshServices[0]._id,
-    title: `${seededDikshanshServices[0].title} - Project`,
+    freelancer: ashish._id,
+    service: seededAshishServices[0]._id,
+    title: `${seededAshishServices[0].title} - Project`,
     requirements: "Need custom authentication and secure database operations.",
     amount: 12000,
     freelancerAmount: 10560,
@@ -639,7 +639,7 @@ async function main() {
     completedAt: dateOffsetMonths(5, 10),
   });
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 10560,
     direction: "credit",
     status: "succeeded",
@@ -651,12 +651,12 @@ async function main() {
   });
 
   // Month 4 (Mar):
-  // Tony buys AWS Deployment (8000) from Dikshansh
+  // Tony buys AWS Deployment (8000) from Ashish
   const order2 = await Order.create({
     client: tony._id,
-    freelancer: dikshansh._id,
-    service: seededDikshanshServices[1]._id,
-    title: `${seededDikshanshServices[1].title} - Project`,
+    freelancer: ashish._id,
+    service: seededAshishServices[1]._id,
+    title: `${seededAshishServices[1].title} - Project`,
     requirements: "Configure Vercel and AWS domain linking.",
     amount: 8000,
     freelancerAmount: 7040,
@@ -679,7 +679,7 @@ async function main() {
     completedAt: dateOffsetMonths(4, 14),
   });
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 7040,
     direction: "credit",
     status: "succeeded",
@@ -689,9 +689,9 @@ async function main() {
     createdAt: dateOffsetMonths(4, 18),
     completedAt: dateOffsetMonths(4, 18),
   });
-  // Dikshansh does a withdrawal of 10000
+  // Ashish does a withdrawal of 10000
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 10000,
     direction: "debit",
     status: "succeeded",
@@ -715,13 +715,13 @@ async function main() {
     createdAt: dateOffsetMonths(3, 2),
     completedAt: dateOffsetMonths(3, 2),
   });
-  // Another client buys AWS deployment (8000) from Dikshansh
+  // Another client buys AWS deployment (8000) from Ashish
   const otherClient = clientDocs[0];
   const order3 = await Order.create({
     client: otherClient._id,
-    freelancer: dikshansh._id,
-    service: seededDikshanshServices[1]._id,
-    title: `${seededDikshanshServices[1].title} - Project`,
+    freelancer: ashish._id,
+    service: seededAshishServices[1]._id,
+    title: `${seededAshishServices[1].title} - Project`,
     requirements: "Deploy dashboard staging environment.",
     amount: 8000,
     freelancerAmount: 7040,
@@ -744,7 +744,7 @@ async function main() {
     completedAt: dateOffsetMonths(3, 15),
   });
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 7040,
     direction: "credit",
     status: "succeeded",
@@ -756,12 +756,12 @@ async function main() {
   });
 
   // Month 2 (May):
-  // Tony buys MongoDB Schema (6000) from Dikshansh
+  // Tony buys MongoDB Schema (6000) from Ashish
   const order4 = await Order.create({
     client: tony._id,
-    freelancer: dikshansh._id,
-    service: seededDikshanshServices[2]._id,
-    title: `${seededDikshanshServices[2].title} - Project`,
+    freelancer: ashish._id,
+    service: seededAshishServices[2]._id,
+    title: `${seededAshishServices[2].title} - Project`,
     requirements: "Define indices and validation logic.",
     amount: 6000,
     freelancerAmount: 5280,
@@ -784,7 +784,7 @@ async function main() {
     completedAt: dateOffsetMonths(2, 8),
   });
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 5280,
     direction: "credit",
     status: "succeeded",
@@ -794,9 +794,9 @@ async function main() {
     createdAt: dateOffsetMonths(2, 10),
     completedAt: dateOffsetMonths(2, 10),
   });
-  // Dikshansh does withdrawal of 8000
+  // Ashish does withdrawal of 8000
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 8000,
     direction: "debit",
     status: "succeeded",
@@ -820,12 +820,12 @@ async function main() {
     createdAt: dateOffsetMonths(1, 5),
     completedAt: dateOffsetMonths(1, 5),
   });
-  // Another client buys MongoDB Schema (6000) from Dikshansh
+  // Another client buys MongoDB Schema (6000) from Ashish
   const order5 = await Order.create({
     client: clientDocs[1]._id,
-    freelancer: dikshansh._id,
-    service: seededDikshanshServices[2]._id,
-    title: `${seededDikshanshServices[2].title} - Project`,
+    freelancer: ashish._id,
+    service: seededAshishServices[2]._id,
+    title: `${seededAshishServices[2].title} - Project`,
     requirements: "Optimize indexes for high volume queries.",
     amount: 6000,
     freelancerAmount: 5280,
@@ -848,7 +848,7 @@ async function main() {
     completedAt: dateOffsetMonths(1, 20),
   });
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 5280,
     direction: "credit",
     status: "succeeded",
@@ -860,12 +860,12 @@ async function main() {
   });
 
   // Current Month (Jul):
-  // Tony buys REST API (12000) from Dikshansh - Active in_progress order
+  // Tony buys REST API (12000) from Ashish - Active in_progress order
   const order6 = await Order.create({
     client: tony._id,
-    freelancer: dikshansh._id,
-    service: seededDikshanshServices[0]._id,
-    title: `${seededDikshanshServices[0].title} - Project`,
+    freelancer: ashish._id,
+    service: seededAshishServices[0]._id,
+    title: `${seededAshishServices[0].title} - Project`,
     requirements: "Phase 2 extension - add analytics endpoints and websocket support.",
     amount: 12000,
     freelancerAmount: 10560,
@@ -887,12 +887,12 @@ async function main() {
     completedAt: dateOffsetMonths(0, 10),
   });
 
-  // Tony buys AWS Deployment (8000) from Dikshansh - Submitted order awaiting review
+  // Tony buys AWS Deployment (8000) from Ashish - Submitted order awaiting review
   const order7 = await Order.create({
     client: tony._id,
-    freelancer: dikshansh._id,
-    service: seededDikshanshServices[1]._id,
-    title: `${seededDikshanshServices[1].title} - Project`,
+    freelancer: ashish._id,
+    service: seededAshishServices[1]._id,
+    title: `${seededAshishServices[1].title} - Project`,
     requirements: "Deploy client app and setup SSL redirection.",
     amount: 8000,
     freelancerAmount: 7040,
@@ -914,9 +914,9 @@ async function main() {
     completedAt: dateOffsetMonths(0, 14),
   });
 
-  // Dikshansh does a withdrawal of 5000 in current month
+  // Ashish does a withdrawal of 5000 in current month
   await WalletTransaction.create({
-    user: dikshansh._id,
+    user: ashish._id,
     amount: 5000,
     direction: "debit",
     status: "succeeded",
@@ -927,18 +927,18 @@ async function main() {
     completedAt: dateOffsetMonths(0, 12),
   });
 
-  // Messages between Tony and Dikshansh
+  // Messages between Tony and Ashish
   await Message.create({
     order: order6._id,
     sender: tony._id,
-    recipient: dikshansh._id,
-    body: "Hi Dikshansh, I've funded the milestone for the websocket integration. Let me know when you can start.",
+    recipient: ashish._id,
+    body: "Hi Ashish, I've funded the milestone for the websocket integration. Let me know when you can start.",
     createdAt: dateOffsetMonths(0, 10),
   });
 
   await Message.create({
     order: order6._id,
-    sender: dikshansh._id,
+    sender: ashish._id,
     recipient: tony._id,
     body: "Thanks Tony! I am starting on it today. Will update you as soon as the websocket baselines are up.",
     createdAt: dateOffsetMonths(0, 11),
@@ -946,13 +946,13 @@ async function main() {
 
   await Message.create({
     order: order7._id,
-    sender: dikshansh._id,
+    sender: ashish._id,
     recipient: tony._id,
     body: "I've deployed the app to AWS and configured SSL. Please review it at your convenience.",
     createdAt: dateOffsetMonths(0, 14),
   });
 
-  console.log(`Seed complete. Added Tony Stark, Dikshansh Singh, 18 sellers, 4 clients, and demo orders. Password for all: ${seedPassword}`);
+  console.log(`Seed complete. Added Tony Stark, Ashish Shankar, 18 sellers, 4 clients, and demo orders. Password for all: ${seedPassword}`);
   process.exit(0);
 }
 
