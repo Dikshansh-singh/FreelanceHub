@@ -499,4 +499,4 @@ Role-based dashboard showing:
 - **Email:** Gmail SMTP with app password
 - **Environment variables:** JWT_SECRET, MONGODB_URI, SMTP config, GOOGLE_CLIENT_ID
 - **Start command:** `node src/server.js`
-- **GitHub:** `github.com/Ashishshankar26/FreelanceHub` (main branch)
+- **GitHub:** `github.com/Dikshansh-singh/FreelanceHub` (main branch)
