@@ -19,7 +19,7 @@ export const env = {
   port: Number(process.env.PORT || 3000),
   appUrl: process.env.APP_URL || `http://localhost:${process.env.PORT || 3000}`,
   clientUrl: process.env.CLIENT_URL || process.env.APP_URL || `http://localhost:${process.env.PORT || 3000}`,
-  mongoUri: process.env.MONGODB_URI || "",
+  mongoUri: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/freelancehub",
   jwtSecret: process.env.JWT_SECRET || "development-only-change-me",
   jwtExpiresIn: process.env.JWT_EXPIRES_IN || "7d",
   paymentProvider: "demo",
